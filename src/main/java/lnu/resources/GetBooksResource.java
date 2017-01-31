@@ -1,9 +1,13 @@
 package lnu.resources;
 
+import lnu.models.book;
+
 import javax.ws.rs.GET;
 import javax.ws.rs.Path;
 import javax.ws.rs.Produces;
 import javax.ws.rs.core.MediaType;
+import java.util.ArrayList;
+import java.util.List;
 
 // Response will be JSON
 @Produces(MediaType.APPLICATION_JSON)
@@ -15,7 +19,19 @@ public class GetBooksResource {
 
 	@GET
 	public String getBooks() {
-		// TODO: Task 1
+		List<book> books = new ArrayList<>();
+//		StringBuilder sb = new StringBuilder();
+
+		book orwell = new book("1984", "George Orwell");
+		book wilkomirski = new book("Fragments", "Benjamin Wilkomirski");
+
+		books.add(orwell);
+		books.add(wilkomirski);
+
+		for (book i : books) {
+			System.out.println(i.toString());
+		}
+
 		return "";
 	}
 

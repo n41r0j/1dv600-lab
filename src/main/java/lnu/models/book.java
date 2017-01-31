@@ -10,4 +10,10 @@ public class book {
         this.author = author;
 
     }
+
+    public String toString() {
+        StringBuilder output = new StringBuilder();
+        output.append(this.title).append(this.author);
+        return String.valueOf(output);
+    }
 }
