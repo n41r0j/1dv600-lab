@@ -1,11 +1,13 @@
 package lnu.resources;
 
 import lnu.models.book;
+import org.codehaus.jackson.map.ObjectMapper;
 
 import javax.ws.rs.GET;
 import javax.ws.rs.Path;
 import javax.ws.rs.Produces;
 import javax.ws.rs.core.MediaType;
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -28,11 +30,21 @@ public class GetBooksResource {
 		books.add(orwell);
 		books.add(wilkomirski);
 
+		ObjectMapper mapper = new ObjectMapper();
+
+		String out;
+
 		for (book i : books) {
-			System.out.println(i.toString());
+			try {
+				out = mapper.writeValueAsString(i);
+			} catch (IOException e) {
+				out = null;
+				e.printStackTrace();
+			}
+			System.out.println(out);
 		}
 
-		return "";
+		return "[{\"id\":\"198401\",\"title\":\"1984\",\"author\":\"George Orwell\"}]";
 	}
 
 }
