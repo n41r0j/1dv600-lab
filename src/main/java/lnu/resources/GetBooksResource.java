@@ -8,8 +8,10 @@ import javax.ws.rs.Path;
 import javax.ws.rs.Produces;
 import javax.ws.rs.core.MediaType;
 import java.io.IOException;
-import java.util.ArrayList;
+
 import java.util.List;
+import java.util.stream.Collectors;
+import java.util.stream.Stream;
 
 // Response will be JSON
 @Produces(MediaType.APPLICATION_JSON)
@@ -21,30 +23,21 @@ public class GetBooksResource {
 
 	@GET
 	public String getBooks() {
-		List<book> books = new ArrayList<>();
-//		StringBuilder sb = new StringBuilder();
-
-		book orwell = new book("1984", "George Orwell");
-		book wilkomirski = new book("Fragments", "Benjamin Wilkomirski");
-
-		books.add(orwell);
-		books.add(wilkomirski);
+		List<book> books = Stream.of(
+				new book("153213","1984", "George Orwell"),
+				new book("153214","Fragments", "Benjamin Wilkomirski"))
+				.collect(Collectors.toList());
 
 		ObjectMapper mapper = new ObjectMapper();
 
-		String out;
-
-		for (book i : books) {
-			try {
-				out = mapper.writeValueAsString(i);
-			} catch (IOException e) {
-				out = null;
-				e.printStackTrace();
-			}
-			System.out.println(out);
+		try {
+			String arrayToJson = mapper.writeValueAsString(books);
+			System.out.println(arrayToJson);
+			return arrayToJson;
+		} catch (IOException e) {
+			e.printStackTrace();
 		}
-
-		return "[{\"id\":\"198401\",\"title\":\"1984\",\"author\":\"George Orwell\"}]";
+		return "";
 	}
 
 }
