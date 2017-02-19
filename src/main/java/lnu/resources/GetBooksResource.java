@@ -19,17 +19,10 @@ import java.util.List;
 @Path("/books")
 public class GetBooksResource {
 	List<book> books;
+
 	@GET
 	public String getBooks() {
 		books = new booksDAO().XMLtoObject();
-
-//		List<book> books = Stream.of(
-//				new book("153213","1984", "George Orwell"),
-//				new book("153214","Fragments", "Benjamin Wilkomirski"),
-//				new book("153215","Blockchain Revolution","Don Tapscott, Alex Tapscott"),
-//				new book("153216","Sapiens","Yuval Noah Arari"),
-//				new book("153217","The Fellowship of the Ring","John Ronald Reuel Tolkien"))
-//				.collect(Collectors.toList());
 		ObjectMapper mapper = new ObjectMapper();
 
 		try {
@@ -40,9 +33,4 @@ public class GetBooksResource {
 		}
 		return "";
 	}
-
-	public static void main(String[] args) {
-		GetBooksResource temp = new GetBooksResource();
-	}
-
 }

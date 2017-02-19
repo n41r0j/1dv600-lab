@@ -5,6 +5,7 @@ package lnu.dao;
 // javax.xml.bind is added as a part of the sdk from java7 and forward.
 
 import lnu.models.book;
+import lnu.models.catalog;
 
 import javax.xml.bind.JAXBContext;
 import javax.xml.bind.JAXBException;
@@ -14,9 +15,9 @@ import java.io.File;
 import java.util.List;
 
 public class booksDAO {
-    public booksDAO() {
-
-    }
+//    public booksDAO() {
+//
+//    }
 
     public List<book> XMLtoObject() {
         catalog catalog = new catalog();

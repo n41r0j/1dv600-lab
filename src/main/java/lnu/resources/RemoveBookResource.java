@@ -26,7 +26,6 @@ public class RemoveBookResource {
             if (!b.getId().equals(id)) {
                 temp.add(b);
             }
-            System.out.println(id + "==" + b.getId());
         }
         booksDAO.ObjectToXML(temp);
     }

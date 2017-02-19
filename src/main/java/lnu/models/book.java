@@ -3,8 +3,6 @@ package lnu.models;
 import javax.xml.bind.annotation.*;
 
 @XmlRootElement(name = "book")
-//@XmlAccessorType(XmlAccessType.FIELD)
-
 public class book {
 
     private String id;
@@ -16,7 +14,6 @@ public class book {
     private String description;
 
     public book() {
-
     }
 
     public book(String id, String title, String author) {

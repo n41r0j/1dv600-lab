@@ -1,6 +1,4 @@
-package lnu.dao;
-
-import lnu.models.book;
+package lnu.models;
 
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
