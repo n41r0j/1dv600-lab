@@ -8,8 +8,8 @@ import javax.ws.rs.Path;
 import javax.ws.rs.PathParam;
 import javax.ws.rs.Produces;
 import javax.ws.rs.core.MediaType;
-import java.util.ArrayList;
 import java.util.List;
+import java.util.stream.Collectors;
 
 @Produces(MediaType.APPLICATION_JSON)
 @Path("/books/")
@@ -20,13 +20,10 @@ public class RemoveBookResource {
     public void removeBook(@PathParam("id") String id) {
         booksDAO booksDAO = new booksDAO();
         List<book> catalog = booksDAO.XMLtoObject();
-        List<book> temp = new ArrayList<>();
+        List<book> temp = catalog.stream()
+                .filter(b -> !id.equals(b.getId()))
+                .collect(Collectors.toList());
 
-        for (book b: catalog) {
-            if (!b.getId().equals(id)) {
-                temp.add(b);
-            }
-        }
         booksDAO.ObjectToXML(temp);
     }
 }
