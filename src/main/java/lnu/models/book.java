@@ -16,11 +16,11 @@ public class book {
     public book() {
     }
 
-    public book(String id, String title, String author) {
-        this.setId(id);
-        this.setTitle(title);
-        this.setAuthor(author);
-    }
+//    public book(String id, String title, String author) {
+//        this.setId(id);
+//        this.setTitle(title);
+//        this.setAuthor(author);
+//    }
 
     public String toString() {
         StringBuilder output = new StringBuilder();

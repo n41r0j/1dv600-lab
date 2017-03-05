@@ -15,23 +15,21 @@ import java.io.File;
 import java.util.List;
 
 public class booksDAO {
-//    public booksDAO() {
-//
-//    }
+    private String pathName = "books.xml";
 
     public List<book> XMLtoObject() {
         catalog catalog = new catalog();
         try {
             JAXBContext context = JAXBContext.newInstance(catalog.class);
             Unmarshaller un = context.createUnmarshaller();
-            catalog = (catalog) un.unmarshal(new File("books.xml"));
+            catalog = (catalog) un.unmarshal(new File(pathName));
         } catch (JAXBException j) {
             j.printStackTrace();
         }
         return catalog.getBooks();
     }
 
-    public void ObjectToXML(List<book> list) {
+    public void objectToXML(List<book> list) {
         catalog catalog = new catalog();
         catalog.setBooks(list);
 
@@ -41,7 +39,7 @@ public class booksDAO {
 
             ms.setProperty(Marshaller.JAXB_FORMATTED_OUTPUT, true);
 
-            ms.marshal(catalog, new File("books.xml"));
+            ms.marshal(catalog, new File(pathName));
 
         } catch (JAXBException e) {
             e.printStackTrace();
@@ -53,4 +51,11 @@ public class booksDAO {
         temp.XMLtoObject();
     }
 
+    public String getPathName() {
+        return pathName;
+    }
+
+    public void setPathName(String pathName) {
+        this.pathName = pathName;
+    }
 }

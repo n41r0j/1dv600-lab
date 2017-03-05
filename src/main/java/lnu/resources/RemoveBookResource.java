@@ -24,6 +24,6 @@ public class RemoveBookResource {
                 .filter(b -> !id.equals(b.getId()))
                 .collect(Collectors.toList());
 
-        booksDAO.ObjectToXML(temp);
+        booksDAO.objectToXML(temp);
     }
 }
