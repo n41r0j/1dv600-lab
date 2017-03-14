@@ -1,7 +1,6 @@
 package lnu.resources;
 
 import lnu.models.book;
-import org.codehaus.jackson.annotate.JsonProperty;
 import sun.reflect.generics.reflectiveObjects.NotImplementedException;
 
 import javax.ws.rs.PathParam;
@@ -12,9 +11,6 @@ import javax.ws.rs.core.MediaType;
 public class EditBookResource {
     private book bookToUpdate;
     private String fileLocation;
-
-    @JsonProperty
-    private String id;
 
     public void createBookObject(@PathParam("{id}") String id,
                                  @PathParam("{author}") String author,

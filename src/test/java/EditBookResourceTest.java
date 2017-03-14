@@ -1,5 +1,7 @@
+import io.dropwizard.testing.junit.ResourceTestRule;
 import lnu.models.book;
 import lnu.resources.EditBookResource;
+import org.junit.ClassRule;
 import org.junit.Test;
 
 import javax.xml.bind.JAXBContext;

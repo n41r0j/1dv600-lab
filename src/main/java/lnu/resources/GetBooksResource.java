@@ -26,7 +26,7 @@ public class GetBooksResource {
 
 		try {
 			String arrayToJson = mapper.writeValueAsString(books);
-			//System.out.println(arrayToJson);
+			System.out.println(arrayToJson);
 			return arrayToJson;
 		} catch (IOException e) {
 			e.printStackTrace();
