@@ -18,19 +18,28 @@ import java.util.List;
 // FOR THE CURIOUS: Take a look in the config.yml to find out why "/api" is present in the path.
 @Path("/books")
 public class GetBooksResource {
-	List<book> books;
+	List<book> books = new booksDAO().XMLtoObject();
 
 	@GET
 	public String getBooks() {
-		books = new booksDAO().XMLtoObject();
 		ObjectMapper mapper = new ObjectMapper();
 
 		try {
 			String arrayToJson = mapper.writeValueAsString(books);
+			//System.out.println(arrayToJson);
 			return arrayToJson;
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
 		return "";
+	}
+
+	public void setBooks(List<book> books) {
+		this.books = books;
+	}
+
+	public static void main(String[] args) {
+		GetBooksResource g = new GetBooksResource();
+		g.getBooks();
 	}
 }

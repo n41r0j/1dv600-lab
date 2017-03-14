@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <catalog>
-    <book id="1">
+    <book id="2">
         <author>Isaac Asimov</author>
-        <description>Foundation is the first novel in Isaac Asimovs Foundation Trilogy (later expanded into The Foundation Series). Foundation is a cycle of five interrelated short stories, first published as a single book by Gnome Press in 1951. Collectively they tell the story of the Foundation, an institute to preserve the best of galactic civilization after the collapse of the Galactic Empire.</description>
+        <description>Foundation and Empire is a novel written by Isaac Asimov that was published by Gnome Press in 1952. It is the second book published in the Foundation Series, and the fourth in the in-universe chronology. It takes place in two halves, originally published as separate novellas. The second part, The Mule, won a Hugo Award.</description>
         <genre>Science Ficition</genre>
-        <price>164.0</price>
-        <title>Foundation</title>
+        <price>79.0</price>
+        <title>Foundation and Empire</title>
     </book>
     <book id="3">
         <author>Isaac Asimov</author>
@@ -13,13 +13,6 @@
         <genre>Science Fiction</genre>
         <price>79.0</price>
         <title>Second Foundation</title>
-    </book>
-    <book id="4">
-        <author>Gamma, Erich; Helm, Richard; Johnson, Ralph; Vlissides, John</author>
-        <description>Design Patterns: Elements of Reusable Object-Oriented Software is a software engineering book describing recurring solutions to common problems in software design. The books authors are Erich Gamma, Richard Helm, Ralph Johnson and John Vlissides with a foreword by Grady Booch. The book is divided into two parts, with the first two chapters exploring the capabilities and pitfalls of object-oriented programming, and the remaining chapters describing 23 classic software design patterns. The book includes examples in C++ and Smalltalk.</description>
-        <genre>Computer Science</genre>
-        <price>350.0</price>
-        <title>Design Patterns: Elements of Reusable Object-Oriented Software</title>
     </book>
     <book id="5">
         <author>Alice in Wonderland</author>
@@ -34,6 +27,13 @@
         <genre>Fantasy</genre>
         <price>79.0</price>
         <title>Ronia the Robbers Daughter</title>
+    </book>
+    <book id="7">
+        <author>Dan Brown</author>
+        <description>The Da Vinci Code is a 2003 mystery-detective novel by Dan Brown. It follows symbologist Robert Langdon and cryptologist Sophie Neveu after a murder in the Louvre Museum in Paris, when they become involved in a battle between the Priory of Sion and Opus Dei over the possibility of Jesus Christ having been married to Mary Magdalene. The title of the novel refers, among other things, to the finding of the first murder victim in the Grand Gallery of the Louvre, naked and posed like Leonardo da Vincis famous drawing, the Vitruvian Man, with a cryptic message written beside his body and a pentagram drawn on his chest in his own blood.</description>
+        <genre>Mystery</genre>
+        <price>139.0</price>
+        <title>The Da Vinci Code</title>
     </book>
     <book id="8">
         <author>Margaret Mitchell</author>

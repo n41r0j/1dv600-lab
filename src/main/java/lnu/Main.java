@@ -29,6 +29,5 @@ public class Main extends Application<Configuration> {
 		environment.jersey().register(new AddBookResource());
 		environment.jersey().register(new EditBookResource());
 		environment.jersey().register(new RemoveBookResource());
-
 	}
 }

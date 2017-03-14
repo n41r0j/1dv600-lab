@@ -8,22 +8,39 @@ import javax.ws.rs.Path;
 import javax.ws.rs.PathParam;
 import javax.ws.rs.Produces;
 import javax.ws.rs.core.MediaType;
+import javax.ws.rs.core.Response;
+import java.util.ArrayList;
 import java.util.List;
-import java.util.stream.Collectors;
 
+@Path("books/{id}")
 @Produces(MediaType.APPLICATION_JSON)
-@Path("/books/")
 public class RemoveBookResource {
 
     @DELETE
-    @Path("{id}")
-    public void removeBook(@PathParam("id") String id) {
+    public Response removeBook(@PathParam("id") String id) {
         booksDAO booksDAO = new booksDAO();
-        List<book> catalog = booksDAO.XMLtoObject();
-        List<book> temp = catalog.stream()
-                .filter(b -> !id.equals(b.getId()))
-                .collect(Collectors.toList());
+        System.out.println("RUNS!");
 
-        booksDAO.ObjectToXML(temp);
+        boolean found = false;
+        List<book> catalog = booksDAO.XMLtoObject();
+        List<book> temp = new ArrayList<>(catalog.size());
+
+        for (book b : catalog) {
+            if (b.getId().equals(id)) {
+                found = true;
+            } else {
+                temp.add(b);
+            }
+        }
+
+
+
+//        List<book> temp = catalog.stream()
+//                .filter(b -> !id.equals(b.getId()))
+//                .collect(Collectors.toList());
+        booksDAO.objectToXML(temp);
+
+        if (found) return Response.status(Response.Status.OK).build();
+        else return Response.status(Response.Status.NOT_FOUND).build();
     }
 }
