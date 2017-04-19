@@ -13,7 +13,7 @@ import javax.ws.rs.core.Response;
 import java.io.IOException;
 import java.util.List;
 
-@Path("books/{id}")
+@Path("/books/{id}")
 @Produces(MediaType.APPLICATION_JSON)
 public class GetBookResource {
 
